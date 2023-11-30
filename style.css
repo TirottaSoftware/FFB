@@ -1,0 +1,240 @@
+:root{
+    --color-main: #F23043;
+    --color-secondary: #E4677C;
+    --color-bg-secondary: #F1F1F1;
+    --color-body: #464646;
+    --color-black: #0F0F0F;
+    --gradient-main: linear-gradient(90deg, #F23043 0%, #E4677C 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+p{
+    color: var(--color-body);
+}
+.img-wrapper img{
+    width: 100%;
+    height: auto;
+}
+.btn-cta{
+    padding: 16px 32px;
+    border-radius: 100px;
+    background: var(--gradient-main);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+}
+.section-wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 15%;
+}
+.section-wrapper .section-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 32px;
+}
+
+/* Hero */
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.hero-content{
+    width: 45%;
+    margin-left: 15%;
+}
+.hero-content h1{
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--color-black);
+}
+.hero-content p{
+    font-size: 1.1rem;
+    margin:12px 0;
+    width: 60%;
+    color: var(--color-body);
+}
+.hero-img{
+    width: 45%;
+}
+
+/* Features */
+.features-container {  
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 400px 400px;
+    gap: 40px 40px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "diet-plans recipes programs"
+    "progress-tracker progress-tracker programs";
+}
+
+.feature-card{
+    background: var(--color-bg-secondary);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+.feature-card .card-content{
+    padding: 24px;
+}
+.feature-card .card-content h3{
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+.feature-card-vertical{
+    flex-flow: column;
+}
+
+.programs { grid-area: programs; }
+
+.progress-tracker { grid-area: progress-tracker; }
+.progress-tracker .feature-card .img-wrapper{
+    width: 35%;
+}
+.progress-tracker .feature-card .card-content{
+    width: 55%;
+}
+
+.recipes { grid-area: recipes; }
+
+.recipes .feature-card .img-wrapper{
+    width: 70%;
+    margin-bottom: 10%;
+}
+
+.diet-plans { grid-area: diet-plans; }
+
+.section-wrapper > .btn-cta{
+    margin-top: 32px;
+}
+
+/* Plans */
+.plans-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.plans-container .plan-card{
+    position: relative;
+    width: 30%;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 40px 16px;
+    background: var(--color-bg-secondary);
+}
+.plan-card h2{
+    font-size: 3rem;    
+}
+.plan-card .btn-cta{
+    margin-top: 16px;
+    width: 90%;
+}
+.plan-card .plan-discount{
+    height: 32px;
+    background: var(--color-black);
+    color: white;
+    padding: 0 16px;
+    border-radius: 16px;
+    display: grid;
+    font-size: 14px;
+    place-items: center;
+    position: absolute;
+    top: -16px;
+}
+
+@media screen and (max-width: 1280px) {
+    .section-wrapper{
+        max-width: 90%;
+        margin: 0 auto 15% auto;
+    }
+    .features-container {  
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .progress-tracker .feature-card .img-wrapper,
+    .progress-tracker .feature-card .card-content{
+        width: 100%;
+    }
+    .plan-card h2{
+        font-size: 2rem;
+    }
+    .plan-card h3{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hero{
+        flex-flow: column-reverse;
+        margin-bottom: 10%;
+    }
+    .hero-content h1{
+        font-size: 2rem;
+    }
+    .section-wrapper .section-title{
+        font-size: 1.5rem;
+    }
+    h3, .feature-card .card-content h3{
+        font-size: 1.25rem;
+    }
+    br{
+        display: none;
+    }
+    .hero-img{
+        width: 100%;
+    }
+    .hero-content{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hero-content p{
+        width: 100%;
+        font-size: 1rem;
+    }
+    .features-container{
+        display: flex;
+        flex-flow: column-reverse;
+        grid-template-areas: unset;
+    }
+    .feature-card-horizontal{
+        flex-flow: column;
+    }
+    .progress-tracker .feature-card .img-wrapper{
+        width: 90%;
+        margin-right: 10%;
+    }
+    .feature-card{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .plans-container{
+        flex-flow: column;
+    }
+    .plans-container .plan-card{
+        width: 100%;
+        margin-bottom: 10%;
+    }
+}
