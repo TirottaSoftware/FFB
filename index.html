@@ -23,6 +23,17 @@
       </div>
       <div></div>
     </div>
+
+    <div class="mobile-nav">
+      <div class="menu-items">
+        <a href="#" class="nav-link">Начало</a>
+        <a href="#" class="nav-link">Тренировъчни програми</a>
+        <a href="#" class="nav-link">Хранителни режими</a>
+        <a href="#" class="nav-link">Рецепти</a>
+        <a href="#" class="nav-link">Контакти</a>
+        <a href="#" class="nav-link">Профил</a>
+      </div>
+    </div>
   </nav>
   <body>
     <div class="hero">
@@ -135,4 +146,12 @@
       </div>
     </section>
   </body>
+  <script>
+    const burger = document.querySelector(".burger");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    burger.addEventListener("click", () => {
+      mobileNav.classList.toggle("mn-visible");
+    });
+  </script>
 </html>
