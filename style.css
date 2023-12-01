@@ -297,6 +297,16 @@ footer {
   .plan-card h3 {
     font-size: 1rem;
   }
+  .footer-container {
+    flex-flow: column;
+    padding: 10% 0;
+    width: 90%;
+  }
+  .footer-container .footer-links {
+    margin-top: 10%;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -356,15 +366,5 @@ footer {
   .plans-container .plan-card {
     width: 100%;
     margin-bottom: 10%;
-  }
-  .footer-container {
-    flex-flow: column;
-    padding: 10% 0;
-    width: 90%;
-  }
-  .footer-container .footer-links {
-    margin-top: 10%;
-    align-items: center;
-    text-align: center;
   }
 }
